@@ -1,8 +1,8 @@
 # Benchmark `List.SequenceEqual` vs. `CollectionAssert.AreEqual`
 
-According to an old StackOverflow entry, `CollectionAssert.AreEqual` is very slow and
-should be replaced by `List.SequenceEqual` if performance matters. This project exists to
-measure that.
+According to [an old StackOverflow entry](https://stackoverflow.com/a/11055686/5909613)
+(see in its comments), `CollectionAssert.AreEqual` is very slow and should be replaced
+by `List.SequenceEqual` if performance matters. This project exists to measure that.
 
 ## Results
 | Method                         | ProblemSize | Mean           | Error         | StdDev        |

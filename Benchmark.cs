@@ -59,4 +59,16 @@ public class Benchmark
 	[Benchmark]
 	public bool SequenceEqual()
 		=> _list1!.SequenceEqual(_list2!);
+
+	[Benchmark]
+	public void AssertSequenceEqual()
+	{
+		try
+		{
+			Assert.IsTrue(_list1!.SequenceEqual(_list2!));
+		}
+		catch(AssertFailedException)
+		{
+		}
+	}
 }

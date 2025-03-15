@@ -7,21 +7,20 @@ by `List.SequenceEqual` if performance matters. This project exists to measure t
 ## Results
 | Method                         | ProblemSize | Mean           | Error         | StdDev        |
 |------------------------------- |------------ |---------------:|--------------:|--------------:|
-| CollectionAssert_AreEqual      | 10          |   1,990.924 ns |    11.0171 ns |     9.1997 ns |
-| CollectionAssert_AreEquivalent | 10          |   2,547.870 ns |    17.5956 ns |    14.6931 ns |
-| SequenceEqual                  | 10          |       3.327 ns |     0.0331 ns |     0.0310 ns |
-| CollectionAssert_AreEqual      | 100         |   2,494.877 ns |    33.0485 ns |    30.9136 ns |
-| CollectionAssert_AreEquivalent | 100         |   6,458.927 ns |    63.9854 ns |    59.8520 ns |
-| SequenceEqual                  | 100         |       7.303 ns |     0.0493 ns |     0.0461 ns |
-| CollectionAssert_AreEqual      | 1000        |   7,316.004 ns |    94.3565 ns |    88.2611 ns |
-| CollectionAssert_AreEquivalent | 1000        |  38,867.322 ns |   750.2078 ns |   701.7448 ns |
-| SequenceEqual                  | 1000        |      42.065 ns |     0.3527 ns |     0.3127 ns |
-| CollectionAssert_AreEqual      | 10000       |  52,085.830 ns |   548.9059 ns |   458.3613 ns |
-| CollectionAssert_AreEquivalent | 10000       | 666,003.197 ns | 7,530.5573 ns | 7,044.0879 ns |
-| SequenceEqual                  | 10000       |     529.526 ns |     2.3010 ns |     1.9215 ns |
-
-## Note
-Take these test results with a grain of salt as `BenchmarkDotNet` is ill equipped to
-benchmark calls that throw exceptions, like assertions do. It is not clear how much of
-the difference is just the exception handling.
+| CollectionAssert_AreEqual      | 10          |   1,974.093 ns |     5.9869 ns |     4.6742 ns |
+| CollectionAssert_AreEquivalent | 10          |   2,469.608 ns |    21.1992 ns |    17.7023 ns |
+| SequenceEqual                  | 10          |       3.321 ns |     0.0363 ns |     0.0322 ns |
+| AssertSequenceEqual            | 10          |   1,705.580 ns |     9.2268 ns |     8.1793 ns |
+| CollectionAssert_AreEqual      | 100         |   2,511.009 ns |    27.7636 ns |    24.6117 ns |
+| CollectionAssert_AreEquivalent | 100         |   5,928.349 ns |    66.2310 ns |    61.9525 ns |
+| SequenceEqual                  | 100         |       7.150 ns |     0.0564 ns |     0.0528 ns |
+| AssertSequenceEqual            | 100         |   1,702.024 ns |    13.1136 ns |    12.2665 ns |
+| CollectionAssert_AreEqual      | 1000        |   7,060.439 ns |    78.5242 ns |    69.6097 ns |
+| CollectionAssert_AreEquivalent | 1000        |  45,565.166 ns |   905.0634 ns | 1,632.0162 ns |
+| SequenceEqual                  | 1000        |      48.288 ns |     0.1757 ns |     0.1558 ns |
+| AssertSequenceEqual            | 1000        |   1,781.720 ns |    18.9940 ns |    17.7670 ns |
+| CollectionAssert_AreEqual      | 10000       |  52,976.775 ns |   842.6284 ns |   746.9681 ns |
+| CollectionAssert_AreEquivalent | 10000       | 768,400.573 ns | 7,837.3499 ns | 7,331.0620 ns |
+| SequenceEqual                  | 10000       |     531.035 ns |     4.1039 ns |     3.8388 ns |
+| AssertSequenceEqual            | 10000       |   2,282.395 ns |    18.8348 ns |    17.6181 ns |
 
